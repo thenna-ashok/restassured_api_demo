@@ -2,9 +2,7 @@ package reqresapi.endpoints;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import reqresapi.payload.Users;
 import reqresapi.payload.UsersRecord;
-
 import static io.restassured.RestAssured.given;
 
 /**

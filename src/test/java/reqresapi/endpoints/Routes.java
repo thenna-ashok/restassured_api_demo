@@ -1,7 +1,7 @@
 package reqresapi.endpoints;
 
      /*
-       GET - https://reqres.in/api/users?page=2
+       GET - https://reqres.in/api/users/2
        POST - https://reqres.in/api/users
        PATCH/UPDATE - https://reqres.in/api/users/2
        DELETE - https://reqres.in/api/users/2
