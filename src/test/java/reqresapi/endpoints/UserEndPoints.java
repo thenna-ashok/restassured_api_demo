@@ -3,6 +3,8 @@ package reqresapi.endpoints;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import reqresapi.payload.UsersRecord;
+import reqresapi.utilities.GenerateTestData;
+
 import static io.restassured.RestAssured.given;
 
 /**
@@ -24,18 +26,18 @@ public class UserEndPoints {
     public static Response readUser(int id) {
         Response response;
         response = given()
-                .pathParam("id" ,id)
+                .pathParam("id", id)
                 .when()
                 .get(Routes.GET_URL);
         return response;
     }
 
-    public static Response updateUser(UsersRecord usersRecord) {
+    public static Response updateUser(UsersRecord usersRecord, int updatedId) {
         Response response;
         response = given()
                 .contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .pathParam("id", usersRecord.id())
+                .pathParam("id", updatedId)
                 .body(usersRecord)
                 .when()
                 .patch(Routes.PATCH_URL);
@@ -50,4 +52,6 @@ public class UserEndPoints {
                 .delete(Routes.DELETE_URL);
         return response;
     }
+
+
 }
