@@ -1,24 +1,21 @@
 package reqresapi.test;
 
 import io.restassured.response.Response;
-import org.junit.jupiter.api.AfterAll;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import reqresapi.endpoints.UserEndPoints;
 import reqresapi.payload.UsersRecord;
 import reqresapi.utilities.GenerateTestData;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Slf4j
 public class UsersTest {
-
-    private static final Logger logger = LoggerFactory.getLogger(UsersTest.class);
 
     @BeforeAll
     public static void setupData(){
-        logger.info("#### Starting the test #####");
+        //TODO - Setup before the test starts
     }
 
     @Test
@@ -50,8 +47,7 @@ public class UsersTest {
         assertEquals( 204, response.getStatusCode());
     }
 
-    @AfterAll
     public static void cleanUpData(){
-        logger.info("#### Finishing the test #####");
+        //TODO - Cleanup tasks if any
     }
 }
